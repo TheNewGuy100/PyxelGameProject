@@ -1,16 +1,19 @@
 
 import pyxel
+from scripts.UI.index import UIUpdate
+from scripts.UI.options import optionsClass
+from scripts.UI.score import scoreClass
+from scripts.background.blackground import BackgroundClass
 
-from scripts.blackground import BackgroundClass
-from scripts.player import playerClass
-from scripts.score import scoreClass
+from scripts.player.index import playerClass
+
 
 
 
 class App(
         playerClass,
-        BackgroundClass, 
-        scoreClass
+        BackgroundClass,
+        UIUpdate
     ):
     APP_HEIGHT = 120
     APP_WIDTH = 160
@@ -30,17 +33,14 @@ class App(
 
         # DRAWS
         self.drawBackground()
-        self.drawScore()
-        self.drawPlayer()
+        self.drawUI()
 
     def update(self):
-        
-        # QUIT GAME
-        if pyxel.btnp(pyxel.KEY_ESCAPE):
-            pyxel.quit()
 
         # GAME UPDATES
         self.updatePlayer()
         self.updateBackground()
+        self.checkMenuOptions()
+        self.updateUI()
 
 App()
