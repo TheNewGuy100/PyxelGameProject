@@ -11,8 +11,10 @@ class UIUpdate(
 ):
     def drawUI(self):
         self.drawScore()
+        self.drawHealthBar()
 
     def updateUI(self):
         self.checkMenuOptions()
         self.drawScore()
-        self.updateHealthBar()
+        self.checkHealth()
+

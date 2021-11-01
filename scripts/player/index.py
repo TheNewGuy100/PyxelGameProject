@@ -1,5 +1,4 @@
 
-import pyxel
 from scripts.player.checkPlayerDead_sub import playerCheckDead
 from scripts.player.drawPlayer_sub import drawPlayerInit
 from scripts.player.playerAnimations_sub import playerAnimations
