@@ -5,6 +5,12 @@ import pyxel
 
 class playerCheckDead():
     def checkPlayerDead(self):
+        for index, enemy in enumerate(self.enemys_list):
+            if abs(enemy['y']-self.player_y) < 16 and abs(self.player_x-enemy['x']) < 8:
+                self.enemys_list.pop(index)
+                self.health -= 25
+                pyxel.play(0,5)
+
         if self.health == 0:
             if self.player_is_alive:
                 self.player_is_alive = False
