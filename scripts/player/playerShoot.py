@@ -52,6 +52,9 @@ class bulletsController():
                 if self.enemys_list.__len__() > 0:
                     for enemy_index, enemy in enumerate(self.enemys_list):
                         if abs(enemy['y']-bullet['y']) < 16 and abs(bullet['x']-enemy['x']) < 8:
+                            if (bullet['y'] < enemy['y'] + 3):
+                                self.AddHeadShot(enemy['x'], enemy['y']+8)
+                                self.score +=50
                             self.enemys_list.pop(enemy_index)
                             self.bullets_list.pop(index)
                             self.score += 100

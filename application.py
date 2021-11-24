@@ -1,5 +1,6 @@
 
 import pyxel
+from scripts.UI.headshotFeedBack import headShotPopUp
 from scripts.UI.index import UIUpdate
 from scripts.background.blackground import BackgroundClass
 from scripts.mechanics.ammoFind import ammoSpawner
@@ -15,7 +16,8 @@ class App(
         UIUpdate,
         bulletsController,
         ammoSpawner,
-        medkitSpawner
+        medkitSpawner,
+        headShotPopUp
     ):
 
     APP_HEIGHT = 120
@@ -46,6 +48,8 @@ class App(
         self.drawEnemys()
         self.drawAmmoBox()
         self.drawMedkitBox()
+        self.gameOverCheck()
+        self.drawHeadShots()
 
     def update(self):
         self.updatePlayer()

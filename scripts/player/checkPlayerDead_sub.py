@@ -14,6 +14,7 @@ class playerCheckDead():
         if self.health == 0:
             if self.player_is_alive:
                 self.player_is_alive = False
+                self.enableGameOver = True
                 pyxel.play(3, 5)
 
             if self.player_is_alive == False:
