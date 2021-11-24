@@ -27,7 +27,7 @@ class playerMovement():
                 self.player_y = min( self.player_y + 2, pyxel.height + 2)
 
         # SHOOT
-        if pyxel.btn(pyxel.KEY_SPACE) or pyxel.btn(pyxel.GAMEPAD_1_B):
+        if pyxel.btn(pyxel.KEY_SPACE) or pyxel.btn(pyxel.GAMEPAD_1_B) and self.player_ammo > 0:
             if ( pyxel.frame_count >= self.shoot_delay ):
                 self.createBullet(self.player_x, self.player_y)
                 self.shoot_delay = pyxel.frame_count + 10
